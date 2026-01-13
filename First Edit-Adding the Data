@@ -1,0 +1,11 @@
+let data
+
+async function setup() {
+  createCanvas (400, 400);
+  data = await loadTable('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6klwbfHtqTCx2ITlZo_f2FSpSdsZl4kpttXpSYce-PPyf2VtoKdApVWPb_nrblABJIIdFQVQcZGsd/pub?gid=0&single=true&output=csv',',','header')
+  console.log(data)
+}
+
+function draw() {
+  background(220)
+}
