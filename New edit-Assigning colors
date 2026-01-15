@@ -1,0 +1,24 @@
+let data
+let columnColors = {};
+
+async function setup() {
+  createCanvas (400, 400);
+  data = await loadTable('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6klwbfHtqTCx2ITlZo_f2FSpSdsZl4kpttXpSYce-PPyf2VtoKdApVWPb_nrblABJIIdFQVQcZGsd/pub?gid=0&single=true&output=csv',',','header');
+  
+//I've assigned each column of data to a color: Blue to HW, pink to sleep, purple to screen time, yellow to workouts and sports, red to procrastination, and green to time with my dog
+  columnColors = {
+     "Homework-hours": color(0, 0, 255),   
+    "Sleep": color(255, 182, 193),          
+    "Screen time": color(128, 0, 128),      
+    "Workout/sports": color(255, 255, 0),   
+    "Procrastination": color(255, 0, 0),    
+    "Time with dog": color(0, 128, 0)    
+  }
+  console.log(data)
+}
+
+function draw() {
+  background(220)
+  
+  let columns = data.columns
+}
